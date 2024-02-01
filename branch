@@ -1,0 +1,29 @@
+function calculateScore(examResults) {
+  // Assume examResults is an object containing scores for different tasks or sections
+
+  // Define weights for each section based on importance
+  const sectionWeights = {
+    task1: 0.3,
+    task2: 0.4,
+    task3: 0.3,
+    // Add more tasks as needed
+  };
+
+  // Calculate the weighted sum of scores
+  const totalScore = Object.keys(examResults).reduce((sum, task) => {
+    return sum + examResults[task] * sectionWeights[task];
+  }, 0);
+
+  return totalScore;
+}
+
+// Example usage:
+const examResults = {
+  task1: 85,
+  task2: 90,
+  task3: 75,
+  // Add more tasks as needed
+};
+
+const finalScore = calculateScore(examResults);
+console.log(`Final Score: ${finalScore}`);
